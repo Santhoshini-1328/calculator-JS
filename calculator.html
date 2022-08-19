@@ -1,0 +1,103 @@
+<html>
+
+<head>
+<script>
+
+function setvalue(v)
+{	document.getElementById('result').value+=v;}
+function calculate(){
+ 	try{
+	var now=document.getElementById('result').value;
+	now = now.toString();
+	exp=eval(now);
+	document.getElementById('result').value = exp;
+	}
+	catch(err){  }
+  
+}
+function clear(){
+console.log("sh");
+document.getElementById('result').value='Enter e';
+}
+</script>
+<style>
+*{
+border : none;
+}
+#card{
+	margin: 200px 30%;
+	padding: 50px 50px ;
+	height: 330px;
+	width: 300px;
+	background-color: DarkSlateGrey;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  	transition: 0.3s;
+        border-radius: 30px;
+}
+#card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 5px;
+  height : 230px;
+  width : 300px;
+}
+input{
+  width : 300px;
+  height : 100px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  margin-bottom : 7px;
+  font-size: 20px;
+  font-weight: bold;
+ text-align: right;
+}
+button {
+ background-color: #708090;
+ box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+ color: white;
+ transition: 0.3s;
+ font-size: 16px;
+}
+.button:hover{
+ box-shadow: 0 8px 16px 0 white;
+ cursor: pointer;
+}
+
+</style>
+</head>
+<body>
+
+<div id="card">
+
+<input type="text" id="result"  onchange="validate();">
+<div class="grid-container">
+
+<button  id="1" onclick="setvalue(1);" class="grid-item1"><b>1</b></button>
+<button  id="2" onclick="setvalue(2);" class="grid-item2"><b>2</b></button>
+<button  id="add" onclick="setvalue('+');" class="grid-item12"><b>+(add)</b></button>
+<button  id="3" onclick="setvalue(3);" class="grid-item3"><b>3</b></button>
+<button  id="4" onclick="setvalue(4);" class="grid-item4"><b>4</b></button>
+<button substraction" id="substraction" onclick="setvalue('-');" class="grid-item13"><b>-(substraction)</b></button>
+<button  id="5" onclick="setvalue(5);" class="grid-item5"><b>5</b></button>
+<button  id="6" onclick="setvalue(6);" class="grid-item6"><b>6</b></button>
+
+<button  id="clear" onclick="clear();" class="grid-item14"><b>clear</b></button>
+
+<button  id="7" onclick="setvalue(7);" class="grid-item7"><b>7</b></button>
+<button  id="8" onclick="setvalue(8);" class="grid-item8"><b>8</b></button>
+
+
+<button  id="calculate" class="grid-item11" onclick="calculate();"><b>Calc</b></button>
+<button  id="9" onclick="setvalue(9);" class="grid-item9"><b>9</b></button>
+
+<button  id="0" onclick="setvalue(0);" class="grid-item0"><b>0</b></button>
+
+</div>
+
+</div>
+
+
+</body>
+</html>
